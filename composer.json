@@ -1,0 +1,40 @@
+{
+    "name": "rhyslees/service-base-test",
+    "description": "Testing",
+    "license": "MIT",
+    "repositories": {
+        "nova": {
+            "type": "composer",
+            "url": "https://nova.laravel.com"
+        },
+        "spark-stripe": {
+            "type": "composer",
+            "url": "https://spark.laravel.com"
+        }
+    },
+    "require": {
+        "php": "^7.3|^8.0",
+        "laravel/nova": "~3.0",
+        "laravel/framework": "^8.0",
+        "laravel/jetstream": "^2.4",
+        "laravel/spark-stripe": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "RhysLees\\ServiceBase\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "RhysLees\\ServiceBase\\Tests\\": "tests/",
+            "App\\": "stubs/app/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "RhysLees\\ServiceBase\\ServiceBaseServiceProvider"
+            ]
+        }
+    }
+}
