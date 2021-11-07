@@ -4,6 +4,7 @@ namespace RhysLees\ServiceBase;
 
 use Spark\Spark;
 use Laravel\Nova\Nova;
+use Laravel\Jetstream\Jetstream;
 use Illuminate\Support\ServiceProvider;
 
 class ServiceBaseServiceProvider extends ServiceProvider
@@ -11,8 +12,12 @@ class ServiceBaseServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/../config/' => config_path(''), 'servicebase-config'
+            __DIR__ . '/../config/servicebase.php' => config_path('servicebase.php')
         ], 'servicebase-config');
+
+        $this->publishes([
+            __DIR__.'/../stubs/database/migrations/' => database_path('migrations')
+        ], 'servicebase-migrations');
 
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'servicebase');
 
@@ -23,7 +28,9 @@ class ServiceBaseServiceProvider extends ServiceProvider
 
     public function register()
     {
-        Spark::ignoreMigrations();
+        $this->mergeConfigFrom(
+            __DIR__ . '/../config/servicebase.php', 'servicebase'
+        );
 
         # code...
         $this->app->singleton(ServiceBase::class, function (){
