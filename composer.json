@@ -10,6 +10,10 @@
         "spark-stripe": {
             "type": "composer",
             "url": "https://spark.laravel.com"
+        },
+        "nova-styling": {
+            "type": "vcs",
+            "url": "https://github.com/Manage-It-Pro-Ltd/Nova-Styling"
         }
     },
     "require": {
@@ -17,7 +21,10 @@
         "laravel/nova": "~3.0",
         "laravel/framework": "^8.0",
         "laravel/jetstream": "^2.4",
-        "laravel/spark-stripe": "^1.0"
+        "laravel/spark-stripe": "^1.0",
+        "livewire/livewire": "^2.5",
+        "manage-it-pro-ltd/nova-styling": "^2.0.0",
+        "chaseconey/nova-external-image": "^0.3.1"
     },
     "autoload": {
         "psr-4": {
