@@ -9,6 +9,8 @@ class Membership extends JetstreamMembership
 {
     use ServiceBase;
 
+    protected $connection = 'servicebase';
+    
     /**
      * Indicates if the IDs are auto-incrementing.
      *

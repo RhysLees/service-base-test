@@ -10,6 +10,8 @@ class TeamInvitation extends JetstreamTeamInvitation
 {
     use ServiceBase;
 
+    protected $connection = 'servicebase';
+    
     /**
      * The attributes that are mass assignable.
      *

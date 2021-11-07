@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
 use Laravel\Jetstream\HasProfilePhoto;
 use Illuminate\Notifications\Notifiable;
@@ -17,8 +18,11 @@ class User extends Authenticatable
     use HasApiTokens;
     use HasFactory;
     use HasProfilePhoto;
+    use HasTeams;
     use Notifiable;
     use TwoFactorAuthenticatable;
+
+    protected $connection = 'servicebase';
 
     /**
      * The attributes that are mass assignable.
