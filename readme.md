@@ -6,8 +6,8 @@
 
 "repositories": {
 	"nova": {
-	"type": "composer",
-	"url": "https://nova.laravel.com"
+		"type": "composer",
+		"url": "https://nova.laravel.com"
 	},
 	"spark-stripe": {
 		"type": "composer",
